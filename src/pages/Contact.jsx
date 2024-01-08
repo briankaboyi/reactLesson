@@ -1,11 +1,10 @@
 import React, { useRef, useState } from 'react'
-import useLocalstorage from './hooks/useLocalstorage'
+import useLocalstorage from '../hooks/useLocalstorage'
 
 function Contact() {
 
     const nameRef= useRef()
     const messageRef= useRef()
-    const local = useLocalstorage()
     const {handleSaveLocal,name}=useLocalstorage()
   
     function handleSubmit(e){

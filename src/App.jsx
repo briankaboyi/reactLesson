@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import RootLayout from './RootLayout'
-import Contact from './contact'
+import RootLayout from './Layouts/RootLayout'
+import Contact from './pages/Contact'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './Home'
+import Home from './pages/Home'
+import Customhooks from './pages/customHooks'
 
 function App() {
 
@@ -15,6 +13,7 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<Contact />} />
+          <Route path="custom" element={<Customhooks />} />
         </Route>
 
       </Routes>
