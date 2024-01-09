@@ -1,7 +1,9 @@
 import React from "react";
+import axios from "axios";
 
+// const axios =  require("axios")
 import { BASE_URL } from "../utils/configs";
-export default function getAllUsers() {
-  const res = fetch(`${BASE_URL}/users`).then((res) => res.json());
-  return res;
+export default async function getAllUsers() {
+  const res = await axios.get(`${BASE_URL}/users`);
+  return res.data;
 }

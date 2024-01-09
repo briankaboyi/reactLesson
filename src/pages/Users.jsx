@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import getAllUsers from '../services/users.api';
+import { LoginContext } from '../App';
+import { Navigate } from 'react-router-dom';
 
 function Users() {
+    const [loggedIn,setLoggedIn]= useContext(LoginContext)
+    
     const [data,setData] = useState([]);
 
     async function getData(){
@@ -10,9 +14,15 @@ function Users() {
     }
     useEffect(() => {
       getData()
+      console.log("checking login status")
     }, [])
+    if(!loggedIn){
+        return <Navigate to ="/"/>
+    }
     return (
-        <div>{data.map((user)=>{
+        <div>
+            <button onClick={()=>setLoggedIn(false)}>Logout</button>
+            {data.map((user)=>{
             return(
                 <div className="userCard" key={user.id} style={{ border:"1px solid"}}>
 

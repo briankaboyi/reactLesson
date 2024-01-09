@@ -6,23 +6,30 @@ import Home from './pages/Home'
 import Customhooks from './pages/CustomHooks'
 import Posts from './pages/Posts'
 import Users from './pages/Users'
+import { createContext, useState } from 'react'
+
+export const LoginContext = createContext()
 
 function App() {
-
+  const [loggedIn, setLoggedIn] = useState(true)
   return (
-    <BrowserRouter >
-      <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<Contact />} />
-          <Route path="custom" element={<Customhooks />} />
-          <Route path="posts" element={<Posts />} />
-          <Route path="users" element={<Users />} />
-        </Route>
+    <LoginContext.Provider value={[loggedIn,setLoggedIn]}>
 
-      </Routes>
+      <BrowserRouter >
+        <Routes>
+          <Route path="/" element={<RootLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<Contact />} />
+            <Route path="custom" element={<Customhooks />} />
+            <Route path="posts" element={<Posts />} />
+            <Route path="users" element={<Users />} />
+          </Route>
 
-    </BrowserRouter>
+        </Routes>
+
+      </BrowserRouter>
+    </LoginContext.Provider>
+
   )
 }
 
