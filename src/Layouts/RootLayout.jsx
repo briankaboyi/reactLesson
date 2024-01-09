@@ -8,6 +8,7 @@ function RootLayout() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="about">About</NavLink>
             <NavLink to="custom">CustomHooks</NavLink>
+            <NavLink to="posts">Posts</NavLink>
         </nav>
         <main className='main'>
           <h1>ROOT LAYOUT</h1>
