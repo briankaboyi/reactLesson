@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Customhooks from './pages/CustomHooks'
 import Posts from './pages/Posts'
+import Users from './pages/Users'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="about" element={<Contact />} />
           <Route path="custom" element={<Customhooks />} />
           <Route path="posts" element={<Posts />} />
+          <Route path="users" element={<Users />} />
         </Route>
 
       </Routes>
