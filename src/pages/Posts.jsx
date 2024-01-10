@@ -8,6 +8,7 @@ function Posts() {
     setData(myData)
     // console.log(await getAllPosts())
   }
+
   useEffect(() => {
     getData();
   }, []);

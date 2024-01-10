@@ -6,16 +6,20 @@ import Home from "./pages/Home";
 import Customhooks from "./pages/CustomHooks";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
-import { createContext, useState } from "react";
+import UseContextProvider from "./context/useContext.jsx";
 
-export const LoginContext = createContext();
+
+
+// export const LoginContext = createContext();
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  // const [loggedIn, setLoggedIn] = useState(true);
+ 
   return (
     // <LoginContext.Provider value={[loggedIn, setLoggedIn]}>
-
-    <Routes>
+    // <UserContext.Provider value="him">
+    
+      <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<Contact />} />
@@ -24,6 +28,8 @@ function App() {
         <Route path="users" element={<Users />} />
       </Route>
     </Routes>
+    // </UserContext.Provider>
+    
     // </LoginContext.Provider>
   );
 }
