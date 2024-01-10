@@ -1,30 +1,31 @@
 import React, { useContext, useEffect, useState } from "react";
 import getAllUsers from "../services/users.api";
-import { LoginContext } from "../App";
 import { Navigate } from "react-router-dom";
-import UseContextProvider from "../context/useContext";
+import { Context } from "../context/useContext";
+
+
+
 
 function Users() {
   // const [loggedIn,setLoggedIn]= useContext(LoginContext)
-  const { data1 } = useContext(UseContextProvider);
-  console.log(data1);
-  const [data, setData] = useState([]);
+
+  const data=useContext(Context)
+  console.log(data);
+  const [data1, setData1] = useState([]);
 
   async function getData() {
     const myData = await getAllUsers();
-    setData(myData);
+    setData1(myData);
   }
   useEffect(() => {
     getData();
-    console.log("checking login status");
   }, []);
-  if (!loggedIn) {
-    return <Navigate to="/" />;
-  }
+ 
   return (
     <div>
-      <button onClick={() => setLoggedIn(false)}>Logout</button>
-      {data.map((user) => {
+ 
+      <button>Logout</button>
+      {data1.map((user) => {
         return (
           <div
             className="userCard"

@@ -1,10 +1,13 @@
-import React, { Children, createContext, useState } from "react";
-const context = createContext();
-const [data, setData] = useState("manasses");
-const UseContextProvider = ({ Children }) => {
+import React, { Children, createContext, useContext, useState } from "react";
+
+   export const Context = createContext();
+ 
+const  UseContextProvider = ({ children }) => {
+  
+  const [data, setData] = useState("manasses");
   return (
-    <context.Provider value={{ data1: data }}>{Children}</context.Provider>
+    <Context.Provider value={data}>{children}</Context.Provider>
   );
-};
+}; 
 
 export default UseContextProvider;

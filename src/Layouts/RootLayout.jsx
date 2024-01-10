@@ -1,12 +1,8 @@
 import React, { useContext ,createContext, useEffect } from 'react'
 import { NavLink, Outlet } from "react-router-dom"
-import { LoginContext } from '../App'
 
 function RootLayout() {
-const loggedIn = useContext(LoginContext)
-useEffect(()=>{
-  console.log(loggedIn)
-})
+
   return (
     <div className='home'>
       <nav className="nav" style={{ display: "flex", justifyContent: "space-between" }}>
