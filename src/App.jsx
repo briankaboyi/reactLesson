@@ -6,14 +6,16 @@ import Home from "./pages/Home";
 import Customhooks from "./pages/CustomHooks";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
-import UseContextProvider from "./context/useContext.jsx";
 
-
+localStorage.setItem(JSON.stringify({username:"tracom",password:"tracom",isLoggedIn:"false"}))
 
 // export const LoginContext = createContext();
 
 function App() {
+  
   // const [loggedIn, setLoggedIn] = useState(true);
+  const isLoggedIn = localStorage.getItem("isLoggedIn")
+  console.log(isLoggedIn)
  
   return (
     // <LoginContext.Provider value={[loggedIn, setLoggedIn]}>
