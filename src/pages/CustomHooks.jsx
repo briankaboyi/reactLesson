@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import useToggleBool from "../hooks/toggleBool";
+import {  getContextData } from "../context/useContext";
 
 function Customhooks() {
+  const data = getContextData()
 const {bool,setBoolean}=useToggleBool();
+console.log("dfasf",data)
 
   return (
     <>

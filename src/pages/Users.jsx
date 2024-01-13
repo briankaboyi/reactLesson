@@ -1,16 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import getAllUsers from "../services/users.api";
 import { Navigate } from "react-router-dom";
-import { Context } from "../context/useContext";
 
 
 
 
 function Users() {
-  // const [loggedIn,setLoggedIn]= useContext(LoginContext)
 
-  const data=useContext(Context)
-  console.log(data);
   const [data1, setData1] = useState([]);
 
   async function getData() {
